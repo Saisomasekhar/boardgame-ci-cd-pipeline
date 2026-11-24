@@ -27,6 +27,9 @@ jobs:
         name: boardgame
         path: target/*.jar
 
+    - name: Set up Trivy
+      uses: aquasecurity/setup-trivy@v0.2.3
+
     - name: Trivy FS scan
       run: |
         trivy fs --format table -o fs.html .
